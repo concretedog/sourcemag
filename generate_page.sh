@@ -65,7 +65,7 @@ done
 
 # index.html
 echo "Generating index.html..."
-ISSUE_HTML=$(for issue in `ls -1 issues | sort -n`; do
+ISSUE_HTML=$(for issue in `ls -1 issues | sort -nr`; do
   ISSUE_DATE=$(pdfinfo issues/$issue/SOURCE_issue_$issue.pdf | awk -F': +' '/CreationDate/ {
     cmd = "date -d \""$2"\" +\"%B %Y\""
     cmd | getline formatted

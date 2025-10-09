@@ -60,7 +60,7 @@ for issue in `ls -1 issues`; do
   echo "Generating issue $issue thumbnail as $THUMBNAIL.png..."
   pdftoppm -f 1 -l 1 -png issues/$issue/SOURCE_issue_$issue.pdf $THUMBNAIL
   mv $THUMBNAIL-01.png $THUMBNAIL.png
-  convert $THUMBNAIL.png -resize 300x300 $THUMBNAIL.png
+  convert $THUMBNAIL.png -resize 600x600 $THUMBNAIL.png
 done
 
 # index.html

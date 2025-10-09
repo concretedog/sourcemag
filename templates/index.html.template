@@ -12,6 +12,11 @@
     <meta property="og:url" content="https://www.sourcemagazine.com">
     <meta property="og:image" content="cover-preview.jpg">
     <title>SOURCE Magazine</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+
+
 
     <!-- Google Fonts: Goudy Bookletter 1911 -->
     <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">

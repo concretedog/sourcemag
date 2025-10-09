@@ -3,7 +3,7 @@
             <div class="cover-card">
               <a href="issues/ISSUE_NUMBER/SOURCE_issue_ISSUE_NUMBER.pdf" target="_blank">
                     <img src="covers/SOURCE_issue_ISSUE_NUMBER-cover.png" alt="SOURCE Magazine Issue ISSUE_NUMBER" class="cover-img">
-                    <div class="cover-title">Issue ISSUE_NUMBER</div>
+                    <div class="cover-title">Issue ISSUE_NUMBER, ISSUE_DATE</div>
                 </a>
             </div>
         </div>

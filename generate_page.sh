@@ -54,7 +54,7 @@ get_pdf_month_year() {
 for issue in `ls -1 issues`; do
   THUMBNAIL=covers/SOURCE_issue_$issue-cover
   if [ -f "$THUMBNAIL.png" ]; then
-    echo "Skipping issue $issue as thumnail exists."
+    echo "Skipping issue $issue as thumnail exists. Delete cover files to regenerate issue."
     continue
   fi
   echo "Generating issue $issue thumbnail as $THUMBNAIL.png..."

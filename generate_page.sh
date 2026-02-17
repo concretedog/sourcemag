@@ -72,7 +72,7 @@ ISSUE_HTML=$(for issue in `ls -1 issues | sort -nr`; do
     close(cmd)
     print formatted
   }')
-KEYWORDS=$(pdfinfo issues/$issue/SOURCE_issue_$issue.pdf 2>/dev/null | awk -F': +' '/Keywords/ {print $2}')
+KEYWORDS=$(pdfinfo issues/$issue/SOURCE_issue_$issue.pdf 2>/dev/null | awk -F': +' '/Keywords/ {print $2}' | sed '/^$/b; s/\.$/&/; t; s/$/./')
 cat templates/issue_snippet.html.template | sed -e "s|KEYWORDS|${KEYWORDS}|g" |sed -e "s/ISSUE_NUMBER/$issue/g" | sed -e "s/ISSUE_DATE/$ISSUE_DATE/g"; done)
 ISSUE_HTML=$(printf '%s\n' "$ISSUE_HTML" | sed -e 's/[\/&]/\\&/g') # escape replacement
 cat templates/index.html.template | sed -e "s|ISSUES_SNIPPET|${ISSUE_HTML//$'\n'/\\n}|g" > index.html

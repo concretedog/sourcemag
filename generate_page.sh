@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # Generates cover thumbnails and index.html
 #
 # You will need:
@@ -72,6 +72,7 @@ ISSUE_HTML=$(for issue in `ls -1 issues | sort -nr`; do
     close(cmd)
     print formatted
   }')
-  cat templates/issue_snippet.html.template | sed -e "s/ISSUE_NUMBER/$issue/g" | sed -e "s/ISSUE_DATE/$ISSUE_DATE/g"; done)
+KEYWORDS=$(pdfinfo issues/$issue/SOURCE_issue_$issue.pdf 2>/dev/null | awk -F': +' '/Keywords/ {print $2}')
+cat templates/issue_snippet.html.template | sed -e "s|KEYWORDS|${KEYWORDS}|g" |sed -e "s/ISSUE_NUMBER/$issue/g" | sed -e "s/ISSUE_DATE/$ISSUE_DATE/g"; done)
 ISSUE_HTML=$(printf '%s\n' "$ISSUE_HTML" | sed -e 's/[\/&]/\\&/g') # escape replacement
 cat templates/index.html.template | sed -e "s|ISSUES_SNIPPET|${ISSUE_HTML//$'\n'/\\n}|g" > index.html

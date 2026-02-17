@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 # Generates cover thumbnails and index.html
 #
 # You will need:
